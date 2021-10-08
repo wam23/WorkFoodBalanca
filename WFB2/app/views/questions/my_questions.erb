@@ -3,28 +3,24 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
 </script>
 
 <% provide(:title, 'My Questions') %>
-<h1>Questions</h1>
-
-<h2>Points: <%= current_user.points %></h2>
+<h1>Current question</h1>
+<h3><%= "You have #{current_user.points} points" %></h3>
 
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<%= question.durationLeft %>)<br/>
+      <%= question.info %> (<%= question.durationLeft.to_i %> seconds)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
-        (1P)<br/>
         <%= hidden_field_tag "points", 1 %>
       <% elsif question.pointssystem == 2 %>
-        (set points)<br/>
         <%= form.label :points, "Points to set:" %>
         <%= form.number_field :points, min: 0, max: current_user.points %><br/>
       <% else %>
         
       <% end %>
       
-      Response:<br/>
         <%= hidden_field_tag "user_id", current_user.id %>
         <%= hidden_field_tag "question_id", question.id %>
         
@@ -38,7 +34,7 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />
         <% end %>
-        <%= form.submit "Submit" %>
+        <%= form.submit "Submit", :class => "btn btn-primary" %>
       <% end %>
     </li>
   <% end %>
