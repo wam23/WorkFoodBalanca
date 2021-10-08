@@ -80,10 +80,10 @@ class QuestionsController < ApplicationController
     question.save
     
     question = Question.new
-    question.info = 'Will this penalty result in a goal?'
+    question.info = 'Will this corner result in a goal?'
     question.questiontype = 1
     question.response = 1
-    question.start_at = Time.now + 180
+    question.start_at = Time.now + 125
     question.end_at = question.start_at + 15
     question.pointssystem = 1
     question.save
@@ -101,7 +101,7 @@ class QuestionsController < ApplicationController
     question.info = 'Who has more ball possession?'
     question.questiontype = 3
     question.response = 0
-    question.start_at = Time.now + 60
+    question.start_at = Time.now + 45
     question.end_at = question.start_at + 6300
     question.pointssystem = 2
     question.save
@@ -119,11 +119,10 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will get the first card?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now + 180
+    question.start_at = Time.now + 105
     question.end_at = question.start_at + 600
     question.pointssystem = 2
     question.save
-
 
     question = Question.new
     question.info = 'Who will lead at half time?'
@@ -138,7 +137,7 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will score the first goal?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now + 120
+    question.start_at = Time.now + 95
     question.end_at = question.start_at + 2700
     question.pointssystem = 2
     question.save
@@ -151,8 +150,33 @@ class QuestionsController < ApplicationController
     question.end_at = question.start_at + 300
     question.pointssystem = 2
     question.save
-    
 
+    question = Question.new
+    question.info = 'Are more than 25''000 spectators here?'
+    question.questiontype = 1
+    question.response = 1
+    question.start_at = Time.now + 110
+    question.end_at = question.start_at + 500
+    question.pointssystem = 2
+    question.save
+    
+    question = Question.new
+    question.info = 'Will there be a red card tonight?'
+    question.questiontype = 1
+    question.response = 1
+    question.start_at = Time.now + 115
+    question.end_at = question.start_at + 500
+    question.pointssystem = 2
+    question.save
+
+    question = Question.new
+    question.info = 'Will WorkFoodBalance win the Hackathon 2021?'
+    question.questiontype = 1
+    question.response = 1
+    question.start_at = Time.now + 130
+    question.end_at = question.start_at + 5000
+    question.pointssystem = 2
+    question.save
 
 
     redirect_back(fallback_location: root_path)
