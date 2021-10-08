@@ -25,6 +25,9 @@ class UsersController < ApplicationController
     @user.admin = false
     @user.points = 100
     @user.loginname = @user.email
+    if User.where('admin' => true).count() == 0
+      @user.admin = true
+    end
     if @user.save
       #@user.send_activation_email
       #flash[:info] = "Prüfe Deine E-Mails um die Anmeldung zu bestätigen (Achtung: unser Mail könnte auch im Spam gelandet sein!)"
