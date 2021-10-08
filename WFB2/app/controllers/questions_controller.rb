@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
 
     answers.each { |answer|
       question = Question.find(answer.question_id)
-      if question.response == answer.response
+      if !answer.response.nil? && question.response == answer.response
         points = points + 1
       end
     }
