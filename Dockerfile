@@ -38,6 +38,7 @@ COPY WFB2/Gemfile ./
 COPY WFB2/Gemfile.lock ./
 # Installs the Gem File.
 RUN bundle install
+RUN npm install
 
 COPY WFB2/. .
 
