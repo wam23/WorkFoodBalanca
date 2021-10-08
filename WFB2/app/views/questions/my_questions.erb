@@ -44,15 +44,4 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
   <% end %>
 </ul>
 
-<h2>Already Answered</h2>
-<ul class="questions">
-  <% @answers_from_user.each do |answer| %>
-    <li>
-      <%= @questions_map[answer.id]&.info %>
-      <%= answer.response %> (<%= answer.points %>)
-    </li>
-  <% end %>
-</ul>
-
-
 
