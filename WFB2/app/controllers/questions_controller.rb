@@ -101,7 +101,7 @@ class QuestionsController < ApplicationController
     question.info = 'Who has more ball possession?'
     question.questiontype = 3
     question.response = 0
-    question.start_at = Time.now + 45
+    question.start_at = Time.now + 40
     question.end_at = question.start_at + 6300
     question.pointssystem = 2
     question.save
@@ -176,6 +176,15 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 130
     question.end_at = question.start_at + 5000
     question.pointssystem = 2
+    question.save
+
+    question = Question.new
+    question.info = 'How many yellow cards will be handed out at this game?'
+    question.questiontype = 2
+    question.response = 6
+    question.start_at = Time.now + 50
+    question.end_at = question.start_at + 5000
+    question.pointssystem = 1
     question.save
 
 
