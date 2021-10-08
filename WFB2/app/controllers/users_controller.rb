@@ -24,10 +24,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.admin = false
     @user.points = 100
+    @user.loginname = @user.email
     if @user.save
       #@user.send_activation_email
       #flash[:info] = "Prüfe Deine E-Mails um die Anmeldung zu bestätigen (Achtung: unser Mail könnte auch im Spam gelandet sein!)"
       @user.activate
+      log_in @user
       redirect_to root_url
     else
       render 'new'
