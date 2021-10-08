@@ -11,6 +11,8 @@
         </li>
         
         <% if logged_in? %>
+          <% 
+=begin %>
           <li class="nav-item dropdow">
           	<a class="nav-link dropdown-toggle <%= 'active' if current_page?(current_user) || current_page?(edit_user_path(current_user)) || current_page?(changePw_path(current_user)) %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Account
@@ -23,6 +25,8 @@
               <li><%= link_to "Log out", logout_path, method: "delete", :class => "dropdown-item" %></li>
             </ul>
           </li>
+          <% 
+=end %>
 		  <% if current_user.admin? %>
             <li class="nav-item dropdow">
           	  <a class="nav-link dropdown-toggle <%= 'active' if current_page?(users_path) %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,6 +53,9 @@
           <li class="nav-item">
           	<%= link_to "Leaderboard", leaderboard_path, :class => "nav-link #{'active' if current_page?(leaderboard_path)}" %>
         	</li>
+          <li class="nav-item">
+            <%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Log in", login_path, :class => "nav-link #{'active' if current_page?(login_path)}" %>
