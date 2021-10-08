@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   include UsersHelper
   
-  has_and_belongs_to_many :answers
-  
   attr_accessor :remember_token, :activation_token, :reset_token
   
   default_scope -> { order(lastname: :asc) }

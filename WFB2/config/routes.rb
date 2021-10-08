@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   
   get 'users/:id/changePassword'  => 'users#changePassword', as: :changePw
   
+  get 'my_questions'    => 'questions#my_questions'
+  
+  post 'answer'    => 'answers#answer'
+  
 end
