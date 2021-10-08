@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2021_10_08_155251) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
+  create_table "answers_questions", id: false, force: :cascade do |t|
+    t.integer "answer_id"
+    t.integer "question_id"
+    t.index ["answer_id"], name: "index_answers_questions_on_answer_id"
+    t.index ["question_id"], name: "index_answers_questions_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "info"
     t.integer "questiontype"
@@ -46,6 +53,13 @@ ActiveRecord::Schema.define(version: 2021_10_08_155251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["loginname"], name: "index_users_on_loginname"
+  end
+
+  create_table "users_questions", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "question_id"
+    t.index ["question_id"], name: "index_users_questions_on_question_id"
+    t.index ["user_id"], name: "index_users_questions_on_user_id"
   end
 
   add_foreign_key "answers", "questions"

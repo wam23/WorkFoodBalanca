@@ -42,5 +42,5 @@ RUN npm install
 
 COPY WFB2/. .
 
-ENTRYPOINT [ "/bin/bash" ]
-#CMD ["rails", "server", "-b", "0.0.0.0"]
+#ENTRYPOINT [ "/bin/bash" ]
+CMD ["rails", "server", "-b", "0.0.0.0"]

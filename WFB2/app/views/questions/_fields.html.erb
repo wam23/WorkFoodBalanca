@@ -14,5 +14,8 @@
 <%= f.label :info, "Info" %>
 <%= f.text_field :info, class: 'form-control' %>
 
+<%= f.label :response, "Response" %>
+<%= f.text_field :response, class: 'form-control' %>
+
 <%= f.label :questiontype, "Type" %>
 <%= select :question, :questiontype, get_all_types.collect {|key, value| [ value, key ] } %>
