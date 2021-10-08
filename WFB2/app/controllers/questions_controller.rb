@@ -85,7 +85,7 @@ class QuestionsController < ApplicationController
     question.info = 'Will this free kick result in a goal?'
     question.questiontype = 1 # 1: yes/no 2: value 3: YB/guest
     question.response = 1
-    question.start_at = Time.now + 240
+    question.start_at = Time.now + 30
     question.end_at = question.start_at + 15
     question.pointssystem = 1 # 1: normal (1P for correct answer) 2: set points
     question.save
