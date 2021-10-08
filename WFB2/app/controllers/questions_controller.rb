@@ -6,7 +6,9 @@ class QuestionsController < ApplicationController
     @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.where('end_at >= ? and start_at <= ?', Time.now, Time.now) - @answered_questions
     # for now display only 1 question
-    @questions = [@questions.first]
+    if @questions.count > 0
+      @questions = [@questions.first]
+    end
     
     @questions_map = []
     @answered_questions.each do |q|
@@ -16,7 +18,7 @@ class QuestionsController < ApplicationController
     if @questions.count > 0
       @timeout = @questions.first.durationLeft + 1
     else
-      @timeout = 2
+      @timeout = 3
     end
   end
   
@@ -85,7 +87,7 @@ class QuestionsController < ApplicationController
     question.info = 'Will this free kick result in a goal?'
     question.questiontype = 1 # 1: yes/no 2: value 3: YB/guest
     question.response = 1
-    question.start_at = Time.now
+    question.start_at = Time.now + 30
     question.end_at = question.start_at + 15
     question.pointssystem = 1 # 1: normal (1P for correct answer) 2: set points
     question.save
@@ -94,7 +96,7 @@ class QuestionsController < ApplicationController
     question.info = 'Will this penalty result in a goal?'
     question.questiontype = 1
     question.response = 1
-    question.start_at = Time.now + 30
+    question.start_at = Time.now + 180
     question.end_at = question.start_at + 15
     question.pointssystem = 1
     question.save
@@ -103,15 +105,6 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will substitute first?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now + 30
-    question.end_at = question.start_at + 600
-    question.pointssystem = 1
-    question.save
-    
-    question = Question.new
-    question.info = 'Who is the best player?'
-    question.questiontype = 2
-    question.response = 'Nsame'
     question.start_at = Time.now
     question.end_at = question.start_at + 600
     question.pointssystem = 1
@@ -121,25 +114,16 @@ class QuestionsController < ApplicationController
     question.info = 'Who has more ball possession?'
     question.questiontype = 3
     question.response = 0
-    question.start_at = Time.now
+    question.start_at = Time.now + 60
     question.end_at = question.start_at + 6300
     question.pointssystem = 2
     question.save
 
     question = Question.new
-    question.info = 'How many beers will be sold tonight?'
-    question.questiontype = 2
-    question.response = 85673
-    question.start_at = Time.now
-    question.end_at = question.start_at + 600
-    question.pointssystem = 1
-    question.save
-    
-    question = Question.new
     question.info = 'Will this penalty be successful?'
     question.questiontype = 1
     question.response = 0
-    question.start_at = Time.now
+    question.start_at = Time.now + 90
     question.end_at = question.start_at + 15
     question.pointssystem = 1
     question.save
@@ -167,7 +151,7 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will score the first goal?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now
+    question.start_at = Time.now + 120
     question.end_at = question.start_at + 2700
     question.pointssystem = 2
     question.save
