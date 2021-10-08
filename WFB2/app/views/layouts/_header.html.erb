@@ -45,6 +45,9 @@
             <li class="nav-item">
           	<%= link_to "My Questions", my_questions_path, :class => "nav-link #{'active' if current_page?(my_questions_path)}" %>
         	</li>
+          <li class="nav-item">
+          	<%= link_to "Leaderboard", leaderboard_path, :class => "nav-link #{'active' if current_page?(leaderboard_path)}" %>
+        	</li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Log in", login_path, :class => "nav-link #{'active' if current_page?(login_path)}" %>
