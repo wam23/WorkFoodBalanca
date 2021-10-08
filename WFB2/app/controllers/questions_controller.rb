@@ -6,7 +6,9 @@ class QuestionsController < ApplicationController
     @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.where('end_at >= ? and start_at <= ?', Time.now, Time.now) - @answered_questions
     # for now display only 1 question
-    @questions = [@questions.first]
+    if @questions.count > 0
+      @questions = [@questions.first]
+    end
     
     @questions_map = []
     @answered_questions.each do |q|
@@ -16,7 +18,7 @@ class QuestionsController < ApplicationController
     if @questions.count > 0
       @timeout = @questions.first.durationLeft + 1
     else
-      @timeout = 2
+      @timeout = 3
     end
   end
   
