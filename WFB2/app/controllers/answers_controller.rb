@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.save
       question = Question.find(@answer.question_id)
-      if !@answer.response.nil? && question.response == @answer.response
+      if !@answer.response.nil? && question.response == @answer.response && @answer.created_at >= question.start_at && @answer.created_at <= question.end_at
         current_user.points = current_user.points + @answer.points
         current_user.save
       end
