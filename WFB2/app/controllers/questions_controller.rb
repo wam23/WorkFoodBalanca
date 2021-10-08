@@ -11,6 +11,12 @@ class QuestionsController < ApplicationController
     @answered_questions.each do |q|
       @questions_map[q.id] = q
     end
+
+    if @questions.count > 0
+      @timeout = @questions.first.durationLeft + 1
+    else
+      @timeout = 2
+    end
   end
 
   def verifyAnswers(answers)
