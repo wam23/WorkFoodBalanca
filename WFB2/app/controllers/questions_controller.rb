@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
     @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.where('end_at >= ?', Time.now) - @answered_questions
-    @points = verifyAnswers(@answers_from_user)
+    #@points = verifyAnswers(@answers_from_user)
     
     @questions_map = []
     @answered_questions.each do |q|
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
       @timeout = 2
     end
   end
-
+  
   def verifyAnswers(answers)
     points = 0
 
@@ -79,6 +79,29 @@ class QuestionsController < ApplicationController
     redirect_to questions_url
   end
   
+  def start_simulation
+    question = Question.new
+    question.info = 'Will this free kick result in a goal?'
+    question.questiontype = 1 # 1: yes/no 2: value 3: YB/guest
+    question.response = 1
+    question.start_at = Time.now
+    question.end_at = question.start_at + 15
+    question.pointssystem = 1 # 1: normal (1P for correct answer) 2: set points
+    question.save
+    
+    question = Question.new
+    question.info = 'Will this penalty result in a goal?'
+    question.questiontype = 1
+    question.response = 1
+    question.start_at = Time.now + 30
+    question.end_at = question.start_at + 15
+    question.pointssystem = 1
+    question.save
+    
+    
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
     def question_params
