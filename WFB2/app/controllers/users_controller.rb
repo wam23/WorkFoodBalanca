@@ -30,7 +30,8 @@ class UsersController < ApplicationController
       #flash[:info] = "Prüfe Deine E-Mails um die Anmeldung zu bestätigen (Achtung: unser Mail könnte auch im Spam gelandet sein!)"
       @user.activate
       log_in @user
-      redirect_to root_url
+      #redirect_to root_url
+      redirect_to my_questions_url
     else
       render 'new'
     end
