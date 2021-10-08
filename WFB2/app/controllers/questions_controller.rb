@@ -1,5 +1,15 @@
 class QuestionsController < ApplicationController
   
+  def my_questions
+    @answers = Answer.all
+    @answers_from_user = Answer.where('user_id' => 1)
+    @question_ids = @answers_from_user.map{ |answer| answer.question_id }
+    @answered_questions = Question.where(id: @question_ids)
+    
+    @questions = Question.all - @answered_questions
+    
+  end
+  
   def new
     @question = Question.new
   end
