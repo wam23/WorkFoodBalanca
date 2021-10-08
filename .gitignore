@@ -289,3 +289,5 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 
 # End of https://www.toptal.com/developers/gitignore/api/node,ruby,rails,linux,macos
+WFB2/package-lock.json
+WFB2/.project

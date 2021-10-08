@@ -1,4 +1,5 @@
 <% provide(:title, "Frage") %>
 <h1><%= @question.info %></h1>
+<h1><%= @question.response %></h1>
 
 <%= get_all_types[@question.questiontype.to_s] %>
