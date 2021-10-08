@@ -29,7 +29,7 @@
 <ul class="questions">
   <% @answers_from_user.each do |answer| %>
     <li>
-      <%= @questions_map[answer.id].info %>
+      <%= @questions_map[answer.id]&.info %>
       <%= answer.response %>
     </li>
   <% end %>
