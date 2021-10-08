@@ -42,5 +42,8 @@ RUN npm install
 
 COPY WFB2/. .
 
+RUN rake db:reset
+RUN rake db:migrate
+
 #ENTRYPOINT [ "/bin/bash" ]
 CMD ["rails", "server", "-b", "0.0.0.0"]
