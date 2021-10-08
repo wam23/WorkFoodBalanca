@@ -1,0 +1,10 @@
+<% provide(:title, 'Questions') %>
+<h1>Questions</h1>
+
+<%= will_paginate %>
+
+<ul class="questions">
+  <%= render @questions %>
+</ul>
+
+<%= will_paginate %>

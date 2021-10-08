@@ -1,0 +1,18 @@
+<% if @question.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= @question.errors.count %> Input error:
+    </div>
+    <ul>
+    <% @question.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= f.label :info, "Info" %>
+<%= f.text_field :info, class: 'form-control' %>
+
+<%= f.label :questiontype, "Type" %>
+<%= f.text_field :questiontype, class: 'form-control' %>

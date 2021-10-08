@@ -1,0 +1,7 @@
+<% provide(:title, "Change question") %>
+<h1>Change question</h1>
+
+<%= form_for(@questiondo |f| %>
+  <%= render 'fields', f: f %>
+  <%= f.submit "Speichern", class: "btn btn-primary" %>
+<% end %>

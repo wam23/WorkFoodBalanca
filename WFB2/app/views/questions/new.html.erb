@@ -1,0 +1,8 @@
+<% provide(:title, 'New question') %>
+  
+<h1>New question</h1>
+  
+<%= form_for(@question) do |f| %>
+  <%= render 'fields', f: f %>      
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>

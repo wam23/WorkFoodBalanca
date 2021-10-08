@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
+  resources :questions
+  resources :answers
+  
   root               'static_pages#home'
   get 'info'      => 'static_pages#info'
   get 'signup'    => 'users#new'
