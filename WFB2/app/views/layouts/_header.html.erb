@@ -7,9 +7,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "Home", root_path, :class => "nav-link #{'active' if current_page?(root_path)}" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "Info", info_path, :class => "nav-link #{'active' if current_page?(info_path)}" %>
         </li>
         
@@ -19,9 +16,9 @@
               Account
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><%= link_to "Profil", current_user, :class => "dropdown-item" %></li>
-              <li><%= link_to "Einstellungen", edit_user_path(current_user), :class => "dropdown-item" %></li>
-              <li><%= link_to "Passwort ändern", changePw_path(current_user), :class => "dropdown-item" %></li>
+              <li><%= link_to "Profile", current_user, :class => "dropdown-item" %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user), :class => "dropdown-item" %></li>
+              <li><%= link_to "Change password", changePw_path(current_user), :class => "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Log out", logout_path, method: "delete", :class => "dropdown-item" %></li>
             </ul>
