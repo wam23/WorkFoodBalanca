@@ -19,7 +19,7 @@ setTimeout("location.reload();",3000);
       <% elsif question.pointssystem == 2 %>
         (set points)<br/>
         <%= form.label :points, "Points to set:" %>
-        <%= form.text_field :points %><br/>
+        <%= form.number_field :points, min: 0, max: current_user.points %><br/>
       <% else %>
         
       <% end %>
