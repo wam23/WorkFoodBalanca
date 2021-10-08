@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   
   get 'my_questions'    => 'questions#my_questions'
   
-  post 'answer'    => 'answers#answer'
+  post 'answer_value'    => 'answers#answer_value'
   
 end
