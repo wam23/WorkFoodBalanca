@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
     @answers_from_user = Answer.where('user_id' => current_user)
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
     @answered_questions = Question.where(id: @question_ids)    
-    @questions = Question.where('end_at >= ?', Time.now) - @answered_questions
+    @questions = Question.where('end_at >= ? and start_at <= ?', Time.now, Time.now) - @answered_questions
     #@points = verifyAnswers(@answers_from_user)
     
     @questions_map = []
