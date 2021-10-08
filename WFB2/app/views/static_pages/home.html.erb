@@ -6,6 +6,11 @@
         <h1 class="fw-light">Work Food Balanca</h1>
         <p class="lead text-muted">Keep everything in balance: food, work, sleep...</p>
         <div class=py-5>
+          <% if logged_in? %>
+	        
+	      <% else %>
+	        
+	      <% end %>
           <%= image_tag("betgame.gif") %>
         </div>
         <div>

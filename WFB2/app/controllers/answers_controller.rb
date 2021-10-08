@@ -11,6 +11,9 @@ class AnswersController < ApplicationController
   
   def answer_value
     @answer = Answer.new(answer_params)
+    if @answer.points.nil?
+      @answer.points = 1
+    end
     if @answer.save
       question = Question.find(@answer.question_id)
       if @answer.created_at >= question.start_at && @answer.created_at <= question.end_at
