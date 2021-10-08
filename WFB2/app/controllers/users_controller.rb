@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.admin = false
+    @user.points = 100
     if @user.save
       #@user.send_activation_email
       #flash[:info] = "Prüfe Deine E-Mails um die Anmeldung zu bestätigen (Achtung: unser Mail könnte auch im Spam gelandet sein!)"

@@ -1,20 +1,19 @@
-<% provide(:title, 'Anmeldung') %>
+<% provide(:title, 'Registration') %>
   
-<h2>Falls ihr bereits ein Login habt, meldet euch bitte <%= link_to "-> hier <-", login_path %> an!</h2>
-<h1>Anmeldung</h1>
+<h1>Registration</h1>
   
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'fields', f: f %>
 		  
-		  <%= f.label :password, "Passwort" %>
+		  <%= f.label :password, "Password" %>
 		  <%= f.password_field :password, class: 'form-control' %>
           
-		  <%= f.label :password_confirmation, "Passwort bestätigen" %>
+		  <%= f.label :password_confirmation, "Confirm password" %>
 		  <%= f.password_field :password_confirmation, class: 'form-control' %>
           
-      <%= f.submit "Anmelden", class: "btn btn-primary" %>
+      <%= f.submit "Register", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

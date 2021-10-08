@@ -5,7 +5,7 @@ setTimeout("location.reload();",3000);
 <% provide(:title, 'My Questions') %>
 <h1>Questions</h1>
 
-<h2>Points: <%= @points %></h2>
+<h2>Points: <%= @points %> (<%= current_user.points %>)</h2>
 
 <ul class="questions">
   <% @questions.each do |question| %>
