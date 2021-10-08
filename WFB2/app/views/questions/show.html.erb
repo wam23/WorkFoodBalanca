@@ -1,3 +1,4 @@
 <% provide(:title, "Frage") %>
 <h1><%= @question.info %></h1>
-<%= @question.questiontype %>
+
+<%= get_all_types[@question.questiontype.to_s] %>

@@ -15,4 +15,4 @@
 <%= f.text_field :info, class: 'form-control' %>
 
 <%= f.label :questiontype, "Type" %>
-<%= f.text_field :questiontype, class: 'form-control' %>
+<%= select :question, :questiontype, get_all_types.collect {|key, value| [ value, key ] } %>
