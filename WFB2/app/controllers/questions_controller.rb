@@ -21,19 +21,6 @@ class QuestionsController < ApplicationController
       @timeout = 3
     end
   end
-  
-  def verifyAnswers(answers)
-    points = 0
-
-    answers.each { |answer|
-      question = Question.find(answer.question_id)
-      if !answer.response.nil? && question.response == answer.response
-        points = points + 1
-      end
-    }
-
-    return points
-  end
 
   def new
     @question = Question.new
