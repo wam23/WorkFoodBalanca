@@ -1,13 +1,15 @@
 class QuestionsController < ApplicationController
   
   def my_questions
-    @answers = Answer.all
-    @answers_from_user = Answer.where('user_id' => 1)
+    @answers_from_user = Answer.where('user_id' => current_user)
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
-    @answered_questions = Question.where(id: @question_ids)
-    
+    @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.all - @answered_questions
     
+    @questions_map = []
+    @answered_questions.each do |q|
+      @questions_map[q.id] = q
+    end
   end
   
   def new
@@ -53,7 +55,7 @@ class QuestionsController < ApplicationController
   private
 
     def question_params
-      params.require(:question).permit(:info, :questiontype)    
+      params.require(:question).permit(:info, :questiontype, :response)    
     end
     
 end

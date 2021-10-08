@@ -7,13 +7,29 @@
       <%= question.info %> (<%= question.questiontype %>)<br/>
       Antwort:
       <% if question.questiontype == 1 %>
-        <%= button_to 'Yes', {:controller => "answers", :action => "create", :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
-        <%= button_to 'No', {:controller => "answers", :action => "create", :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
+        <%= button_to 'Yes', {:controller => "answers", :action => "create", :response => 1, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
+        <%= button_to 'No', {:controller => "answers", :action => "create", :response => 0, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
       <% elsif question.questiontype == 2 %>
-        value
+        <%= form_with url: "/answer_value", method: :get do |form| %>
+	    <%= form.label :query, "Search for:" %>
+	    <%= form.text_field :query %>
+	    <%= form.submit "Search" %>
+	  <% end %>
+
       <% else %>
         todo
       <% end %>
     </li>
   <% end %>
 </ul>
+
+<h2>Already Answered</h2>
+<ul class="questions">
+  <% @answers_from_user.each do |answer| %>
+    <li>
+      <%= @questions_map[answer.id].info %>
+      <%= answer.response %>
+    </li>
+  <% end %>
+</ul>
+
