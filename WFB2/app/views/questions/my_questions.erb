@@ -5,26 +5,37 @@ setTimeout("location.reload();",3000);
 <% provide(:title, 'My Questions') %>
 <h1>Questions</h1>
 
-<h2>Points: <%= @points %> (<%= current_user.points %>)</h2>
+<h2>Points: <%= current_user.points %></h2>
 
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
       <%= question.info %> (<%= question.durationLeft %>)<br/>
-      Response:
-      <% if question.questiontype == 1 %>
-        <%= button_to 'Yes', {:controller => "answers", :action => "create", :response => 1, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
-        <%= button_to 'No', {:controller => "answers", :action => "create", :response => 0, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
-      <% elsif question.questiontype == 2 %>
-        <%= form_with url: "/answer_value", method: :post do |form| %>
+      <%= form_with url: "/answer_value", method: :post do |form| %>
+      
+      <% if question.pointssystem == 1 %>
+        (1P)<br/>
+        <%= hidden_field_tag "points", 1 %>
+      <% elsif question.pointssystem == 2 %>
+        (set points)<br/>
+        <%= form.label :points, "Points to set:" %>
+        <%= form.text_field :points %><br/>
+      <% else %>
+        
+      <% end %>
+      
+      Response:<br/>
+        <%= hidden_field_tag "user_id", current_user.id %>
+        <%= hidden_field_tag "question_id", question.id %>
+        
+        <% if question.questiontype == 1 %>
+          <%= form.radio_button :response, '1', :checked => true %> Yes
+          <%= form.radio_button :response, '0' %> No<br />
+        <% elsif question.questiontype == 2 %>
           <%= form.label :response, "Value:" %>
           <%= form.text_field :response %>
-          <%= hidden_field_tag "user_id", current_user.id %>
-          <%= hidden_field_tag "question_id", question.id %>
-          <%= form.submit "Submit" %>
         <% end %>
-      <% else %>
-        todo
+        <%= form.submit "Submit" %>
       <% end %>
     </li>
   <% end %>
@@ -35,7 +46,7 @@ setTimeout("location.reload();",3000);
   <% @answers_from_user.each do |answer| %>
     <li>
       <%= @questions_map[answer.id]&.info %>
-      <%= answer.response %>
+      <%= answer.response %> (<%= answer.points %>)
     </li>
   <% end %>
 </ul>

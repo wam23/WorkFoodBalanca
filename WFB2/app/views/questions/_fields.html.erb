@@ -22,5 +22,10 @@
 
 <br/>
 
+<%= f.label :pointssystem, "Point system" %>
+<%= select :question, :pointssystem, get_all_pointssystem.collect {|key, value| [ value, key ] } %>
+
+<br/>
+
 <%= f.label :duration, "Duration" %>
 <%= f.text_field :duration, class: 'form-control' %>
