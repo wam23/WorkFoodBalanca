@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   
   post 'answer_value'    => 'answers#answer_value'
   
+  get 'simulation'    => 'questions#simulation'
+  post 'start_simulation'    => 'questions#start_simulation'
+  
 end

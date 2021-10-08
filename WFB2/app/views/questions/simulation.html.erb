@@ -1,0 +1,6 @@
+<% provide(:title, 'Simulation') %>
+<h1>Simulation</h1>
+
+<%= form_with url: "/start_simulation", method: :post do |form| %>
+  <%= form.submit "Start live feed" %>
+<% end %>

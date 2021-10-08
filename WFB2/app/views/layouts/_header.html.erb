@@ -29,7 +29,7 @@
                 Admin
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><%= link_to "Benutzer", users_path, :class => "dropdown-item" %></li>
+                <li><%= link_to "Users", users_path, :class => "dropdown-item" %></li>
               </ul>
             </li>
 		  <% end %>
@@ -40,6 +40,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><%= link_to "List", questions_path, :class => "dropdown-item" %></li>
                 <li><%= link_to "New", new_question_path, :class => "dropdown-item" %></li>
+                <li><%= link_to "Simulation", simulation_path, :class => "dropdown-item" %></li>
               </ul>
             </li>
             <li class="nav-item">
