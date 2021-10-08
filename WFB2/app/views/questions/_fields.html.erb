@@ -19,3 +19,8 @@
 
 <%= f.label :questiontype, "Type" %>
 <%= select :question, :questiontype, get_all_types.collect {|key, value| [ value, key ] } %>
+
+<br/>
+
+<%= f.label :duration, "Duration" %>
+<%= f.text_field :duration, class: 'form-control' %>
