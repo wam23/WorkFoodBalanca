@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PutDataRequest RequestId="1bdd3260-00f5-4da1-92c5-759e888480c2" MessageTime="2019-08-19T13:28:29.073+02:00" TransmissionComplete="true" TransmissionSuspended="false">
+    <MatchInformation>
+        <General TypeOfSport="Fußball" CompetitionName="Bundesliga" CompetitionId="DFL-COM-000001" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Type="Ligabetrieb" Season="2019/2020" SeasonId="DFL-SEA-0001K3" MatchDay="1" PlannedKickoffTime="2019-08-16T20:30:00.000+02:00" KickoffTime="2019-08-16T20:35:19.210+02:00" MatchId="DFL-MAT-003BFM" DlProviderId="173382" MatchTitle="FC Bayern München:Hertha BSC" HomeTeamName="FC Bayern München" HomeTeamId="DFL-CLU-00000G" GuestTeamName="Hertha BSC" GuestTeamId="DFL-CLU-00000Z" Result="2:2"/>
+        <Environment Country="Deutschland" StadiumId="DFL-STA-000006" StadiumName="Allianz Arena" StadiumAddress="Werner-Heisenberg-Allee 25, 80939 München" Roof="open" Floodlight="required" Temperature="26" AirHumidity="35" AirPressure="1017" PitchErosion="none" NumberOfSpectators="75000" StadiumCapacity="75000" Precipitation="none" SoldOut="true" PitchX="105.0" PitchY="68.0"/>
+        <Teams>
+            <Team TeamId="DFL-CLU-00000G" TeamName="FC Bayern München" Role="home" PlayerShirtMainColor="#D80024" PlayerShirtSecondaryColor="#F20029" PlayerShirtNumberColor="#FFFFFF" LineUp="4-3-3 with 6">
+                <Players>
+                    <Player PersonId="DFL-OBJ-0000I4" ShirtNumber="1" FirstName="Manuel Peter" LastName="Neuer" Shortname="Manuel Neuer" Starting="true" PlayingPosition="TW" TeamLeader="true"/>
+                    <Player PersonId="DFL-OBJ-0001HT" ShirtNumber="4" FirstName="Niklas" LastName="Süle" Shortname="N. Süle" Starting="true" PlayingPosition="IVR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027G0" ShirtNumber="5" FirstName="Benjamin" LastName="Pavard" Shortname="B. Pavard" Starting="true" PlayingPosition="IVL" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0001Z8" ShirtNumber="6" FirstName="Thiago" LastName="Alcantara Nascimiento" Shortname="Thiago" Starting="true" PlayingPosition="DMZ" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-00000M" ShirtNumber="9" FirstName="Robert" LastName="Lewandowski" Shortname="R. Lewandowski" Starting="true" PlayingPosition="STZ" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027G6" ShirtNumber="22" FirstName="Serge David" LastName="Gnabry" Shortname="Serge Gnabry" Starting="true" PlayingPosition="RA" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027VU" ShirtNumber="24" FirstName="Corentin" LastName="Tolisso" Shortname="C. Tolisso" Starting="true" PlayingPosition="HL" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000IA" ShirtNumber="25" FirstName="Thomas" LastName="Müller" Shortname="T. Müller" Starting="true" PlayingPosition="HR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000I9" ShirtNumber="27" FirstName="David" LastName="Olatukunbo Alaba" Shortname="David Alaba" Starting="true" PlayingPosition="LV" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0026PM" ShirtNumber="29" FirstName="Kingsley Junior" LastName="Coman" Shortname="Kingsley Coman" Starting="true" PlayingPosition="LA" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0002F5" ShirtNumber="32" FirstName="Joshua Walter" LastName="Kimmich" Shortname="Joshua Kimmich" Starting="true" PlayingPosition="RV" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000IM" ShirtNumber="17" FirstName="Jérôme Agyenim" LastName="Boateng" Shortname="Jérôme Boateng" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-002FWZ" ShirtNumber="19" FirstName="Alphonso Boyle" LastName="Davies" Shortname="Alphonso Davies" Starting="false" PlayingPosition="RA" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-002G0I" ShirtNumber="21" FirstName="Lucas Francois Bernard" LastName="Hernandez" Shortname="Lucas Hernandez" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-002G4D" ShirtNumber="28" FirstName="Sarpreet" LastName="Singh" Shortname="S. Singh" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000LT" ShirtNumber="26" FirstName="Sven" LastName="Ulreich" Shortname="S. Ulreich" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0026ZQ" ShirtNumber="35" FirstName="Renato" LastName="Júnior Luz Sanches" Shortname="Renato Sanches" Starting="false" PlayingPosition="HL" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0028IF" ShirtNumber="37" FirstName="Paul" LastName="Will" Shortname="P. Will" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0001HD" ShirtNumber="38" FirstName="Kwasi Okyere" LastName="Wriedt" Shortname="K. Wriedt" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-00286O" ShirtNumber="33" FirstName="Lars Lukas" LastName="Mai" Shortname="Lukas Mai" Starting="false" TeamLeader="false"/>
+                </Players>
+                <TrainerStaff>
+                    <Trainer PersonId="DFL-OBJ-0026VU" Role="headcoach" FirstName="Niko" LastName="Kovac" Shortname="N. Kovac"/>
+                    <Trainer PersonId="DFL-OBJ-0027SQ" Role="assistantHeadcoach" FirstName="Robert" LastName="Kovac" Shortname="R. Kovac"/>
+                    <Trainer PersonId="DFL-OBJ-0027ZT" Role="assistantHeadcoach" FirstName="Hans-Dieter" LastName="Flick" Shortname="H. Flick"/>
+                    <Trainer PersonId="DFL-OBJ-0000I2" Role="assistantHeadcoach" FirstName="Toni" LastName="Tapalovic" Shortname="T. Tapalovic"/>
+                </TrainerStaff>
+                <OfficialStaff>
+                    <Official Role="firstOfficial" Shortname="H. Salihamidžic" LastName="Salihamidžic" FirstName="Hasan" PersonId="DFL-OBJ-0000UB"/>
+                </OfficialStaff>
+            </Team>
+            <Team TeamId="DFL-CLU-00000Z" TeamName="Hertha BSC" Role="guest" PlayerShirtMainColor="#FFFFFF" PlayerShirtSecondaryColor="#00459D" PlayerShirtNumberColor="#193967" LineUp="3-4-1-2 defensive Midfielder">
+                <Players>
+                    <Player PersonId="DFL-OBJ-0000S1" ShirtNumber="1" FirstName="Thomas" LastName="Kraft" Shortname="T. Kraft" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027UN" ShirtNumber="4" FirstName="Karim" LastName="Rekik" Shortname="K. Rekik" Starting="true" PlayingPosition="IVL" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0001HJ" ShirtNumber="5" FirstName="Niklas" LastName="Stark" Shortname="N. Stark" Starting="true" PlayingPosition="IVZ" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-00024R" ShirtNumber="6" FirstName="Vladimír" LastName="Darida" Shortname="V. Darida" Starting="true" PlayingPosition="DML" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027AV" ShirtNumber="10" FirstName="Ondrej" LastName="Duda" Shortname="O. Duda" Starting="true" PlayingPosition="ZO" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000O1" ShirtNumber="11" FirstName="Mathew Allan" LastName="Leckie" Shortname="Mathew Leckie" Starting="true" PlayingPosition="DRM" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0026NZ" ShirtNumber="13" FirstName="Lukas" LastName="Klünter" Shortname="L. Klünter" Starting="true" PlayingPosition="IVR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-002FUK" ShirtNumber="15" FirstName="Marko" LastName="Grujic" Shortname="M. Grujic" Starting="true" PlayingPosition="DMR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000K9" ShirtNumber="3" FirstName="Per Ciljan" LastName="Skjelbred" Shortname="Per Skjelbred" Starting="false" PlayingPosition="DMR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027TH" ShirtNumber="7" FirstName="Eduard" LastName="Löwen" Shortname="E. Löwen" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0002LD" ShirtNumber="8" FirstName="Salomon" LastName="Armand Magloire Kalou" Shortname="Salomon Kalou" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000PL" ShirtNumber="9" FirstName="Alexander" LastName="Esswein" Shortname="A. Esswein" Starting="false" PlayingPosition="OLM" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-00265W" ShirtNumber="14" FirstName="Pascal" LastName="Köpke" Shortname="P. Köpke" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0025AD" ShirtNumber="17" FirstName="Maximilian" LastName="Mittelstädt" Shortname="M. Mittelstädt" Starting="true" PlayingPosition="DLM" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0000W7" ShirtNumber="19" FirstName="Vedad" LastName="Ibiševic" Shortname="V. Ibiševic" Starting="true" PlayingPosition="STL" TeamLeader="true"/>
+                    <Player PersonId="DFL-OBJ-000282" ShirtNumber="22" FirstName="Rune" LastName="Almenning Jarstein" Shortname="Rune Jarstein" Starting="true" PlayingPosition="TW" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0028R0" ShirtNumber="28" FirstName="Dodi" LastName="Lukebakio Ngandoli" Shortname="Dodi Lukebakio" Starting="true" PlayingPosition="STR" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0027JU" ShirtNumber="25" FirstName="Jordan" LastName="Torunarigha" Shortname="J. Torunarigha" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-0028C8" ShirtNumber="26" FirstName="Sidney" LastName="Friede" Shortname="S. Friede" Starting="false" TeamLeader="false"/>
+                    <Player PersonId="DFL-OBJ-000270" ShirtNumber="27" FirstName="Davie" LastName="Selke" Shortname="D. Selke" Starting="false" PlayingPosition="STZ" TeamLeader="false"/>
+                </Players>
+                <TrainerStaff>
+                    <Trainer PersonId="DFL-OBJ-00012S" Role="headcoach" FirstName="Ante" LastName="Covic" Shortname="A. Covic"/>
+                    <Trainer PersonId="DFL-OBJ-002G1T" Role="assistantHeadcoach" FirstName="Harald" LastName="Gämperle" Shortname="H. Gämperle"/>
+                    <Trainer PersonId="DFL-OBJ-0027QP" Role="assistantHeadcoach" FirstName="Mirko" LastName="Dickhaut" Shortname="M. Dickhaut"/>
+                    <Trainer PersonId="DFL-OBJ-0000VM" Role="assistantHeadcoach" FirstName="Zsolt" LastName="Petry" Shortname="Z. Petry"/>
+                </TrainerStaff>
+                <OfficialStaff>
+                    <Official Role="firstOfficial" Shortname="M. Preetz" LastName="Preetz" FirstName="Michael" PersonId="DFL-OBJ-00282L"/>
+                </OfficialStaff>
+            </Team>
+        </Teams>
+        <Referees>
+            <Referee PersonId="DFL-OBJ-000117" Role="referee" FirstName="Harm" LastName="Osmers" Shortname="H. Osmers"/>
+            <Referee PersonId="DFL-OBJ-00014Q" Role="firstAssistant" FirstName="Thomas" LastName="Gorniak" Shortname="T. Gorniak"/>
+            <Referee PersonId="DFL-OBJ-00011V" Role="secondAssistant" FirstName="Robert" LastName="Kempter" Shortname="R. Kempter"/>
+            <Referee PersonId="DFL-OBJ-000123" Role="fourthOfficial" FirstName="Markus" LastName="Schmidt" Shortname="M. Schmidt"/>
+            <Referee PersonId="DFL-OBJ-00023F" Role="videoReferee" FirstName="Tobias" LastName="Reichel" Shortname="T. Reichel"/>
+        </Referees>
+        <OtherGameInformation TotalTimeSecondHalf="2894560" TotalTimeFirstHalf="2906000" PlayingTimeSecondHalf="1740160" PlayingTimeFirstHalf="1779920"/>
+    </MatchInformation>
+</PutDataRequest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PutDataRequest RequestId="66398861-b047-461c-9d68-b95941e87bb8" MessageTime="2021-02-19T17:02:30.417+01:00" TransmissionComplete="true" TransmissionSuspended="false">
+    <Competitions>
+        <Competition CompetitionId="DFL-COM-000N5J" DlProviderId="Wiederholungsspiele Supercup" CompetitionName="Wiederholungsspiele Supercup" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000N5I" DlProviderId="116" CompetitionName="Wiederholungsspiele Relegation 2. Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000N5H" DlProviderId="115" CompetitionName="Wiederholungsspiele Relegation Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000N5G" DlProviderId="152" CompetitionName="Wiederholungsspiele 2. Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000N5F" DlProviderId="151" CompetitionName="Wiederholungsspiele Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000002" DlProviderId="52" CompetitionName="2. Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Ligabetrieb"/>
+        <Competition CompetitionId="DFL-COM-000001" DlProviderId="51" CompetitionName="Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Ligabetrieb"/>
+        <Competition CompetitionId="DFL-COM-000N5D" DlProviderId="60" CompetitionName="DFB Pokal" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+        <Competition CompetitionId="DFL-COM-000N5E" DlProviderId="648" CompetitionName="Test" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Ligabetrieb"/>
+        <Competition CompetitionId="DFL-COM-000004" DlProviderId="15" CompetitionName="Relegation Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Relegation"/>
+        <Competition CompetitionId="DFL-COM-000005" DlProviderId="16" CompetitionName="Relegation 2. Bundesliga" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Relegation"/>
+        <Competition CompetitionId="DFL-COM-000003" DlProviderId="61" CompetitionName="Supercup" Country="Deutschland" Host="Die Liga - Fußballverband e.V. (Ligaverband)" Sport="Fußball" CompetitionType="Turnier"/>
+    </Competitions>
+</PutDataRequest>
