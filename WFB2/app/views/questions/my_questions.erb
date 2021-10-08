@@ -10,7 +10,7 @@ setTimeout("location.reload();",3000);
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<%= question.questiontype %>)<br/>
+      <%= question.info %> (<%= question.durationLeft %>)<br/>
       Response:
       <% if question.questiontype == 1 %>
         <%= button_to 'Yes', {:controller => "answers", :action => "create", :response => 1, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
@@ -39,4 +39,6 @@ setTimeout("location.reload();",3000);
     </li>
   <% end %>
 </ul>
+
+
 

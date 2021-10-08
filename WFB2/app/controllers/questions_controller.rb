@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
     @answers_from_user = Answer.where('user_id' => current_user)
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
     @answered_questions = Question.where(id: @question_ids)    
-    @questions = Question.all - @answered_questions
+    @questions = Question.where('end_at >= ?', Time.now) - @answered_questions
     @points = verifyAnswers(@answers_from_user)
     
     @questions_map = []
@@ -40,6 +40,13 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    duration = params[:id]
+    @question.start_at = Time.now
+    duration = params[:question][:duration].to_i
+    if duration == 0
+      duration = 24 * 3600
+    end
+    @question.end_at = @question.start_at + duration
     if @question.save
       redirect_to questions_url
     else
@@ -69,7 +76,7 @@ class QuestionsController < ApplicationController
   private
 
     def question_params
-      params.require(:question).permit(:info, :questiontype, :response)    
+      params.require(:question).permit(:info, :questiontype, :response, :start_at, :end_at)    
     end
     
 end
