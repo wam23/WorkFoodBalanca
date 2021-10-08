@@ -5,7 +5,8 @@ class QuestionsController < ApplicationController
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
     @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.where('end_at >= ? and start_at <= ?', Time.now, Time.now) - @answered_questions
-    #@points = verifyAnswers(@answers_from_user)
+    # for now display only 1 question
+    @questions = [@questions.first]
     
     @questions_map = []
     @answered_questions.each do |q|

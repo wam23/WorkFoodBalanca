@@ -1,5 +1,7 @@
 class Question < ApplicationRecord
   
+  default_scope -> { order(end_at: :asc) }
+  
   def duration
     if self.end_at.nil? || self.start_at.nil?
       return 0
