@@ -110,7 +110,7 @@ class QuestionsController < ApplicationController
     question.info = 'Will this penalty be successful?'
     question.questiontype = 1
     question.response = 0
-    question.start_at = Time.now + 90
+    question.start_at = Time.now + 80
     question.end_at = question.start_at + 15
     question.pointssystem = 1
     question.save
@@ -137,7 +137,7 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will score the first goal?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now + 95
+    question.start_at = Time.now + 60
     question.end_at = question.start_at + 2700
     question.pointssystem = 2
     question.save
