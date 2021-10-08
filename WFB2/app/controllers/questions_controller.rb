@@ -112,7 +112,7 @@ class QuestionsController < ApplicationController
     question.info = 'Who has more ball possession?'
     question.questiontype = 3
     question.response = 0
-    question.start_at = Time.now + 300
+    question.start_at = Time.now + 60
     question.end_at = question.start_at + 6300
     question.pointssystem = 2
     question.save
