@@ -11,19 +11,18 @@ setTimeout("location.reload();",3000);
   <% @questions.each do |question| %>
     <li>
       <%= question.info %> (<%= question.questiontype %>)<br/>
-      Antwort:
+      Response:
       <% if question.questiontype == 1 %>
         <%= button_to 'Yes', {:controller => "answers", :action => "create", :response => 1, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
         <%= button_to 'No', {:controller => "answers", :action => "create", :response => 0, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
       <% elsif question.questiontype == 2 %>
         <%= form_with url: "/answer_value", method: :post do |form| %>
-	    <%= form.label :response, "Value:" %>
-	    <%= form.text_field :response %>
-	    <%= hidden_field_tag "user_id", current_user.id %>
-	    <%= hidden_field_tag "question_id", question.id %>
-	    <%= form.submit "Submit" %>
-	  <% end %>
-
+          <%= form.label :response, "Value:" %>
+          <%= form.text_field :response %>
+          <%= hidden_field_tag "user_id", current_user.id %>
+          <%= hidden_field_tag "question_id", question.id %>
+          <%= form.submit "Submit" %>
+        <% end %>
       <% else %>
         todo
       <% end %>
