@@ -82,7 +82,7 @@ class QuestionsController < ApplicationController
   private
 
     def question_params
-      params.require(:question).permit(:info, :questiontype, :response, :start_at, :end_at)    
+      params.require(:question).permit(:info, :questiontype, :response, :start_at, :end_at, :pointssystem)    
     end
     
 end
