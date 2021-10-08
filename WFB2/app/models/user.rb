@@ -10,14 +10,14 @@ class User < ActiveRecord::Base
   before_create :create_activation_digest
   
   validates :loginname, presence: true, length: { maximum: 64 }, uniqueness: { case_sensitive: false }
-  validates :forename,  presence: true, length: { maximum: 64 }
-  validates :lastname,  presence: true, length: { maximum: 64 }
+  #validates :forename,  presence: true, length: { maximum: 64 }
+  #validates :lastname,  presence: true, length: { maximum: 64 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                       format: { with: VALID_EMAIL_REGEX }
                       
   has_secure_password
-  validates :password, length: { minimum: 6 }, allow_blank: true
+  validates :password, length: { minimum: 3 }, allow_blank: true
   
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -78,6 +78,9 @@ class User < ActiveRecord::Base
   end
   
   def name
+    if self.lastname.nil? || self.forename.nil?
+      return ""
+    end
     self.lastname + " " + self.forename
   end
   
