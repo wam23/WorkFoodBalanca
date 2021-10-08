@@ -2,7 +2,8 @@ module QuestionsHelper
   
   def get_all_types
     return { "1" => "Yes / No",
-             "2" => "Value" }
+             "2" => "Value",
+             "3" => "YB / guest" }
   end
 
   def get_all_pointssystem
