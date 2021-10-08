@@ -139,7 +139,7 @@ class QuestionsController < ApplicationController
     question.questiontype = 1
     question.response = 0
     question.start_at = Time.now
-    question.end_at = question.start_at +15
+    question.end_at = question.start_at + 15
     question.pointssystem = 1
     question.save
 
@@ -147,8 +147,8 @@ class QuestionsController < ApplicationController
     question.info = 'Which team will get the first card?'
     question.questiontype = 3
     question.response = 1
-    question.start_at = Time.now +180
-    question.end_at = question.start_at +600
+    question.start_at = Time.now + 180
+    question.end_at = question.start_at + 600
     question.pointssystem = 2
     question.save
 
@@ -158,7 +158,7 @@ class QuestionsController < ApplicationController
     question.questiontype = 3
     question.response = 0
     question.start_at = Time.now
-    question.end_at = question.start_at +2700
+    question.end_at = question.start_at + 2700
     question.pointssystem = 1
     question.save
 
@@ -167,7 +167,7 @@ class QuestionsController < ApplicationController
     question.questiontype = 3
     question.response = 1
     question.start_at = Time.now
-    question.end_at = question.start_at +2700
+    question.end_at = question.start_at + 2700
     question.pointssystem = 2
     question.save
 
@@ -176,7 +176,7 @@ class QuestionsController < ApplicationController
     question.questiontype = 3
     question.response = 0
     question.start_at = Time.now
-    question.end_at = question.start_at +300
+    question.end_at = question.start_at + 300
     question.pointssystem = 2
     question.save
     
