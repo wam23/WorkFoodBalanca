@@ -5,13 +5,27 @@ class QuestionsController < ApplicationController
     @question_ids = @answers_from_user.map{ |answer| answer.question_id }
     @answered_questions = Question.where(id: @question_ids)    
     @questions = Question.all - @answered_questions
+    @points = verifyAnswers(@answers_from_user)
     
     @questions_map = []
     @answered_questions.each do |q|
       @questions_map[q.id] = q
     end
   end
-  
+
+  def verifyAnswers(answers)
+    points = 0
+
+    answers.each { |answer|
+      question = Question.find(answer.question_id)
+      if question.response == answer.response
+        points = points + 1
+      end
+    }
+
+    return points
+  end
+
   def new
     @question = Question.new
   end

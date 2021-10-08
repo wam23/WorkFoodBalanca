@@ -1,6 +1,8 @@
 <% provide(:title, 'My Questions') %>
 <h1>Questions</h1>
 
+<h2>Points: <% @points %></h2>
+
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
@@ -29,7 +31,7 @@
 <ul class="questions">
   <% @answers_from_user.each do |answer| %>
     <li>
-      <%= @questions_map[answer.id].info %>
+      <%= @questions_map[answer.id]&.info %>
       <%= answer.response %>
     </li>
   <% end %>
