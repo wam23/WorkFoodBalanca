@@ -12,10 +12,12 @@
         <%= button_to 'Yes', {:controller => "answers", :action => "create", :response => 1, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
         <%= button_to 'No', {:controller => "answers", :action => "create", :response => 0, :question_id => question.id, :user_id=> session[:user_id]} , :method=>:post %>
       <% elsif question.questiontype == 2 %>
-        <%= form_with url: "/answer_value", method: :get do |form| %>
-	    <%= form.label :query, "Search for:" %>
-	    <%= form.text_field :query %>
-	    <%= form.submit "Search" %>
+        <%= form_with url: "/answer_value", method: :post do |form| %>
+	    <%= form.label :response, "Value:" %>
+	    <%= form.text_field :response %>
+	    <%= hidden_field_tag "user_id", current_user.id %>
+	    <%= hidden_field_tag "question_id", question.id %>
+	    <%= form.submit "Submit" %>
 	  <% end %>
 
       <% else %>
