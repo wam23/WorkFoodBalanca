@@ -34,6 +34,9 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
         <% elsif question.questiontype == 2 %>
           <%= form.label :response, "Value:" %>
           <%= form.text_field :response %>
+        <% elsif question.questiontype == 3 %>
+          <%= form.radio_button :response, '0', :checked => true %> YB
+          <%= form.radio_button :response, '1' %> Guest<br />
         <% end %>
         <%= form.submit "Submit" %>
       <% end %>
