@@ -6,5 +6,9 @@ module QuestionsHelper
              "3" => "Enumeration"  }
   end
 
+  def get_all_pointssystem
+    return { "1" => "Normal (1P per question)",
+             "2" => "Set points" }
+  end
 
 end

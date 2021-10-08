@@ -1,6 +1,9 @@
 <% provide(:title, "Frage") %>
 <h1><%= @question.info %></h1>
-Response: <%= @question.response %>
+Response: <%= @question.response %><br/>
 
 <%= get_all_types[@question.questiontype.to_s] %><br/>
-Duration: <%= @question.duration %>
+
+<%= get_all_pointssystem[@question.pointssystem.to_s] %><br/>
+
+Duration: <%= @question.duration %><br/>

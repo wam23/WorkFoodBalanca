@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_174544) do
+ActiveRecord::Schema.define(version: 2021_10_08_183408) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_174544) do
     t.integer "response"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.integer "pointssystem"
   end
 
   create_table "users", force: :cascade do |t|
