@@ -6,7 +6,6 @@ class AnswersController < ApplicationController
       redirect_back(fallback_location: root_path)
     else
       render 'new'
-      render "new"
     end
   end
 
