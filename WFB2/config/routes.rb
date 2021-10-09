@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   
   get 'simulation'    => 'questions#simulation'
   post 'start_simulation'    => 'questions#start_simulation'
+  post 'start_pot_eval'    => 'questions#start_pot_eval'
   
   get :question_stats, controller: :questions
   

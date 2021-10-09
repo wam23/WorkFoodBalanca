@@ -47,6 +47,41 @@ class QuestionsController < ApplicationController
     
     render partial: "question_stats"
   end
+  
+  def simulation
+    
+  end
+  
+  def start_pot_eval
+    questions = Question.where('potevaluated' => false, 'pointssystem' => 3)
+    question_ids = questions.map{ |q| q.id }
+    
+    questions.each do |question|
+      answers = Answer.where(question_id: question.id)
+      lostpotsize = 0
+      wonpotsize = 0
+      
+      answers.each do |answer|
+        if !answer.response.nil? && question.response == answer.response
+          wonpotsize = wonpotsize + answer.points
+        else
+          lostpotsize = lostpotsize + answer.points
+        end
+      end
+      
+      answers.each do |answer|
+        if !answer.response.nil? && question.response == answer.response
+          user = User.find(answer.user_id)
+          potpoints = lostpotsize * answer.points / wonpotsize
+          user.points = user.points + potpoints.to_i
+          user.save
+        end
+      end
+      
+      question.potevaluated = true
+      question.save
+    end
+  end
 
   def new
     @question = Question.new
@@ -69,6 +104,7 @@ class QuestionsController < ApplicationController
       duration = 24 * 3600
     end
     @question.end_at = @question.start_at + duration
+    @question.potevaluated = false
     if @question.save
       redirect_to questions_url
     else
@@ -166,7 +202,7 @@ class QuestionsController < ApplicationController
     question.sponsor = 'inpeek'
     question.save
 
-	question = Question.new
+	  question = Question.new
     question.info = 'Which team will score the first goal?'
     question.questiontype = 3
     question.response = 1
