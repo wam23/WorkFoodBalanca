@@ -11,7 +11,10 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
+      <% if question.sponsor %>
+        This question is sponsored by <%= image_tag("elcalogo.png") %><br />
+      <% end %>
+      <b><%= question.info %></b> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
