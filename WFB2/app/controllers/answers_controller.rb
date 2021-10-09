@@ -21,8 +21,8 @@ class AnswersController < ApplicationController
           current_user.points = current_user.points + @answer.points
         elsif question.pointssystem == 2
           current_user.points = current_user.points - @answer.points
-          if current_user.points < 0
-            current_user.points = 0
+          if current_user.points < 1
+            current_user.points = 1
           end
         end
         current_user.save
