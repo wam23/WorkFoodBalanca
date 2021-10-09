@@ -194,6 +194,15 @@ class QuestionsController < ApplicationController
     question.end_at = question.start_at + 500
     question.pointssystem = 2
     question.save
+    
+    question = Question.new
+    question.info = 'Who will be the best player?'
+    question.questiontype = 4
+    question.response = 16
+    question.start_at = Time.now + 112
+    question.end_at = question.start_at + 500
+    question.pointssystem = 2
+    question.save
 
     question = Question.new
     question.info = 'Will WorkFoodBalance win the Hackathon 2021?'
