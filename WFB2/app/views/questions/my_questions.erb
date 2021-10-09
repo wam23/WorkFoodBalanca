@@ -11,9 +11,6 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <% if question.sponsor %>
-        This question is sponsored by <%= image_tag("sponsors/" + question.sponsor + ".png") %><br />
-      <% end %>
       <b><%= question.info %></b> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
@@ -35,7 +32,7 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
           <%= form.radio_button :response, '0' %> No<br />
         <% elsif question.questiontype == 2 %>
           <%= form.label :response, "Value:" %>
-          <%= form.text_field :response %>
+          <%= form.text_field :response %><br />
         <% elsif question.questiontype == 3 %>
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />
@@ -44,6 +41,11 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
         <% end %>
         <br />
         <%= form.submit "Submit", :class => "btn btn-primary" %>
+
+        <% if question.sponsor %>
+          <br /><br />
+          This question is sponsored by <%= image_tag("sponsors/" + question.sponsor + ".png") %>
+        <% end %>
       <% end %>
     </li>
   <% end %>
