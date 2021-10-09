@@ -12,9 +12,3 @@ Start local server
 
     docker-compose build
     docker-compose run --rm --service-ports ruby_dev
-
-
-## Prod
-Build
-
-    parcel build index.html
