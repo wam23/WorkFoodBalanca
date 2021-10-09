@@ -9,7 +9,8 @@ module QuestionsHelper
 
   def get_all_pointssystem
     return { "1" => "Normal (1P per question)",
-             "2" => "Set points" }
+             "2" => "Set points",
+             "3" => "Pot" }
   end
   
   def get_all_players_sorted

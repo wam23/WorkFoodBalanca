@@ -20,8 +20,10 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
         <%= form.label :points, "Points to set:" %>
         0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
         <br/>
-      <% else %>
-        
+      <% elsif question.pointssystem == 3 %>
+        <%= form.label :points, "Points to put in pot:" %>
+        0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
+        <br/>
       <% end %>
       
         <%= hidden_field_tag "user_id", current_user.id %>

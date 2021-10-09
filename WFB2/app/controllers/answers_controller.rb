@@ -17,13 +17,15 @@ class AnswersController < ApplicationController
     if @answer.save
       question = Question.find(@answer.question_id)
       if @answer.created_at >= question.start_at && @answer.created_at <= question.end_at
-        if !@answer.response.nil? && question.response == @answer.response
+        if question.pointssystem == 3 # pot
+          current_user.points = current_user.points - @answer.points
+        elsif !@answer.response.nil? && question.response == @answer.response
           current_user.points = current_user.points + @answer.points
         elsif question.pointssystem == 2
           current_user.points = current_user.points - @answer.points
-          if current_user.points < 1
-            current_user.points = 1
-          end
+        end
+        if current_user.points < 1
+          current_user.points = 1
         end
         current_user.save
       end

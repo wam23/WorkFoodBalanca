@@ -4,3 +4,9 @@
 <%= form_with url: "/start_simulation", method: :post do |form| %>
   <%= form.submit "Start live feed" %>
 <% end %>
+
+<br/>
+<br/>
+<%= form_with url: "/start_pot_eval", method: :post do |form| %>
+  <%= form.submit "Start pot evaluation" %>
+<% end %>
