@@ -40,7 +40,7 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />
         <% elsif question.questiontype == 4 %>
-          <%= form.select :response, get_all_players_sorted.map { |key, value| [ key + ' ' + value, key ] } %>
+          <%= form.select :response, get_all_players_sorted.map { |key, value| [ key + ' ' + value, key ] } %><br />
         <% end %>
         <br />
         <%= form.submit "Submit", :class => "btn btn-primary" %>
