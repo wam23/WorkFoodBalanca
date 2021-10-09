@@ -3,7 +3,8 @@ module QuestionsHelper
   def get_all_types
     return { "1" => "Yes / No",
              "2" => "Value",
-             "3" => "YB / guest" }
+             "3" => "YB / guest",
+             "4" => "YB player" }
   end
 
   def get_all_pointssystem
@@ -26,11 +27,10 @@ module QuestionsHelper
              "30" => "Sandro Lauper",
              "32" => "Fabian Rieder",
              "35" => "Christopher Martins",
-             "" => "",
-             "" => "",
-             "" => "",
-             "" => "",
-             "" => "",
+             "15" => "Meschak Elia",
+             "17" => "Jordy Siebatcheu",
+             "18" => "Jean-Pierre Nsame",
+             "19" => "Felix Mambimbi"
               }
   end
 
