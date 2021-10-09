@@ -11,7 +11,7 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<%= question.durationLeft.to_i %> seconds)<br/>
+      <%= question.info %> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
