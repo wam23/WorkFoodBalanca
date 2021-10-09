@@ -5,7 +5,7 @@
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
-        <%= hidden_field_tag "points", 1 %>
+        <%= hidden_field_tag "points", 10 %>
       <% elsif question.pointssystem == 2 %>
         <%= form.label :points, "Points to set:" %>
         0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
