@@ -246,7 +246,7 @@ class QuestionsController < ApplicationController
     question.response = 16
     question.start_at = Time.now + 112
     question.end_at = question.start_at + 500
-    question.pointssystem = 2
+    question.pointssystem = 3
     question.save
 
     question = Question.new
@@ -266,8 +266,7 @@ class QuestionsController < ApplicationController
     question.end_at = question.start_at + 5000
     question.pointssystem = 1
     question.save
-
-
+    
     redirect_back(fallback_location: root_path)
   end
 
