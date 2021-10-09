@@ -12,6 +12,10 @@ module QuestionsHelper
              "2" => "Set points" }
   end
   
+  def get_all_players_sorted
+    return self.get_all_players.sort_by { |k, v| k.to_i }
+  end
+  
   def get_all_players
     return { "26" => "David von Ballmoos",
              "4" => "Mohamed Ali Camara",
