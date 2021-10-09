@@ -1,7 +1,7 @@
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<%= question.durationLeft.to_i %> seconds)<br/>
+      <%= question.info %> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
@@ -22,7 +22,7 @@
           <%= form.radio_button :response, '0' %> No<br />
         <% elsif question.questiontype == 2 %>
           <%= form.label :response, "Value:" %>
-          <%= form.text_field :response %>
+          <%= form.text_field :response %><br />
         <% elsif question.questiontype == 3 %>
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />

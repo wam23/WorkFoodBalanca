@@ -54,4 +54,9 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
     // Dispatch 'refresh' on the render_async container
     //container.dispatchEvent(event)
   }, 3000);
+
+  var intervalId2 = window.setInterval(function(){
+    var element = document.getElementById("left");
+    element.textContent = parseInt(element.textContent - 1);
+  }, 1000);
 </script>
