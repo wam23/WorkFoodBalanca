@@ -26,6 +26,8 @@
         <% elsif question.questiontype == 3 %>
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />
+        <% elsif question.questiontype == 4 %>
+          
         <% end %>
         <br />
         <%= form.submit "Submit", :class => "btn btn-primary" %>
