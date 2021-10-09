@@ -17,7 +17,7 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
       <% if question.pointssystem == 1 %>
         <%= hidden_field_tag "points", 10 %>
       <% elsif question.pointssystem == 2 %>
-        <%= form.label :points, "Points to set:" %>
+        <%= form.label :points, "Points to bet:" %>
         0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
         <br/>
       <% else %>
