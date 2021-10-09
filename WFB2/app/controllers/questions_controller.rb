@@ -139,6 +139,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 30
     question.end_at = question.start_at + 15
     question.pointssystem = 1 # 1: normal (1P for correct answer) 2: set points
+    question.sponsor = 'accenture'
     question.save
     
     question = Question.new
@@ -148,6 +149,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 125
     question.end_at = question.start_at + 15
     question.pointssystem = 1
+    question.sponsor = 'bekb'
     question.save
 
     question = Question.new
@@ -157,6 +159,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now
     question.end_at = question.start_at + 600
     question.pointssystem = 1
+    question.sponsor = 'bls'
     question.save
 
     question = Question.new
@@ -166,6 +169,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 40
     question.end_at = question.start_at + 6300
     question.pointssystem = 2
+    question.sponsor = 'bscyb'
     question.save
 
     question = Question.new
@@ -175,6 +179,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 80
     question.end_at = question.start_at + 15
     question.pointssystem = 1
+    question.sponsor = 'elcalogo'
     question.save
 
     question = Question.new
@@ -184,6 +189,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 105
     question.end_at = question.start_at + 600
     question.pointssystem = 2
+    question.sponsor = 'ewb'
     question.save
 
     question = Question.new
@@ -193,6 +199,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now
     question.end_at = question.start_at + 2700
     question.pointssystem = 1
+    question.sponsor = 'inpeek'
     question.save
 
 	  question = Question.new
@@ -202,6 +209,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now + 60
     question.end_at = question.start_at + 2700
     question.pointssystem = 2
+    question.sponsor = 'socios'
     question.save
 
     question = Question.new
@@ -211,6 +219,7 @@ class QuestionsController < ApplicationController
     question.start_at = Time.now
     question.end_at = question.start_at + 300
     question.pointssystem = 2
+    question.sponsor = 'thommen'
     question.save
 
     question = Question.new

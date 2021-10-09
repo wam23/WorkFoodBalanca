@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_10_09_063426) do
+=======
+ActiveRecord::Schema.define(version: 2021_10_09_062430) do
+>>>>>>> 0d2761c6f5c7d27d669325ef465deafbb945aead
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id", null: false
@@ -32,7 +36,11 @@ ActiveRecord::Schema.define(version: 2021_10_09_063426) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer "pointssystem"
+<<<<<<< HEAD
     t.boolean "potevaluated"
+=======
+    t.string "sponsor"
+>>>>>>> 0d2761c6f5c7d27d669325ef465deafbb945aead
   end
 
   create_table "users", force: :cascade do |t|

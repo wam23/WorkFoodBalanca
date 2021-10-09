@@ -11,13 +11,13 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
 <ul class="questions">
   <% @questions.each do |question| %>
     <li>
-      <%= question.info %> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
+      <b><%= question.info %></b> (<span id="left"><%= question.durationLeft.to_i %></span> seconds left)<br/>
       <%= form_with url: "/answer_value", method: :post do |form| %>
       
       <% if question.pointssystem == 1 %>
         <%= hidden_field_tag "points", 10 %>
       <% elsif question.pointssystem == 2 %>
-        <%= form.label :points, "Points to set:" %>
+        <%= form.label :points, "Points to bet:" %>
         0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
         <br/>
       <% elsif question.pointssystem == 3 %>
@@ -34,15 +34,20 @@ setTimeout("location.reload();",<%=@timeout*1000%>);
           <%= form.radio_button :response, '0' %> No<br />
         <% elsif question.questiontype == 2 %>
           <%= form.label :response, "Value:" %>
-          <%= form.text_field :response %>
+          <%= form.text_field :response %><br />
         <% elsif question.questiontype == 3 %>
           <%= form.radio_button :response, '0', :checked => true %> YB
           <%= form.radio_button :response, '1' %> Guest<br />
         <% elsif question.questiontype == 4 %>
-          <%= form.select :response, get_all_players_sorted.map { |key, value| [ key + ' ' + value, key ] } %>
+          <%= form.select :response, get_all_players_sorted.map { |key, value| [ key + ' ' + value, key ] } %><br />
         <% end %>
         <br />
         <%= form.submit "Submit", :class => "btn btn-primary" %>
+
+        <% if question.sponsor %>
+          <br /><br />
+          This question is sponsored by <%= image_tag("sponsors/" + question.sponsor + ".png") %>
+        <% end %>
       <% end %>
     </li>
   <% end %>
