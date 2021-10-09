@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
     else
       @timeout = 3
     end
+    @timeoutInMs = @timeout * 1000
   end
   
   def question_stats
@@ -36,6 +37,13 @@ class QuestionsController < ApplicationController
     @answered_questions.each do |q|
       @questions_map[q.id] = q
     end
+    
+    if @questions.count > 0
+      @timeout = @questions.first.durationLeft + 1
+    else
+      @timeout = 3
+    end
+    @timeoutInMs = @timeout * 1000
     
     render partial: "question_stats"
   end
