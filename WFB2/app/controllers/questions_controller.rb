@@ -21,6 +21,24 @@ class QuestionsController < ApplicationController
       @timeout = 3
     end
   end
+  
+  def question_stats
+    @answers_from_user = Answer.where('user_id' => current_user)
+    @question_ids = @answers_from_user.map{ |answer| answer.question_id }
+    @answered_questions = Question.where(id: @question_ids)    
+    @questions = Question.where('end_at >= ? and start_at <= ?', Time.now, Time.now) - @answered_questions
+    # for now display only 1 question
+    if @questions.count > 0
+      @questions = [@questions.first]
+    end
+    
+    @questions_map = []
+    @answered_questions.each do |q|
+      @questions_map[q.id] = q
+    end
+    
+    render partial: "question_stats"
+  end
 
   def new
     @question = Question.new

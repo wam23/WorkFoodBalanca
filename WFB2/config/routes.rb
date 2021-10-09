@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   get 'simulation'    => 'questions#simulation'
   post 'start_simulation'    => 'questions#start_simulation'
   
+  get :question_stats, controller: :questions
+  
 end

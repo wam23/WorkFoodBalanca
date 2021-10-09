@@ -1,44 +1,22 @@
 <script language="javascript" type="text/javascript">
-setTimeout("location.reload();",<%=@timeout*1000%>);
+//setTimeout("location.reload();",<%=@timeout*1000%>);
 </script>
 
 <% provide(:title, 'My Questions') %>
 <h1>Current question</h1>
 <h3><%= "You have #{current_user.points} points" %></h3>
 
-<ul class="questions">
-  <% @questions.each do |question| %>
-    <li>
-      <%= question.info %> (<%= question.durationLeft.to_i %> seconds)<br/>
-      <%= form_with url: "/answer_value", method: :post do |form| %>
-      
-      <% if question.pointssystem == 1 %>
-        <%= hidden_field_tag "points", 1 %>
-      <% elsif question.pointssystem == 2 %>
-        <%= form.label :points, "Points to set:" %>
-        0<%= form.range_field :points, min: 0, max: current_user.points, value: 1 %><%= current_user.points %>
-        <br/>
-      <% else %>
-        
-      <% end %>
-      
-        <%= hidden_field_tag "user_id", current_user.id %>
-        <%= hidden_field_tag "question_id", question.id %>
-        
-        <% if question.questiontype == 1 %>
-          <%= form.radio_button :response, '1', :checked => true %> Yes
-          <%= form.radio_button :response, '0' %> No<br />
-        <% elsif question.questiontype == 2 %>
-          <%= form.label :response, "Value:" %>
-          <%= form.text_field :response %>
-        <% elsif question.questiontype == 3 %>
-          <%= form.radio_button :response, '0', :checked => true %> YB
-          <%= form.radio_button :response, '1' %> Guest<br />
-        <% end %>
-        <%= form.submit "Submit", :class => "btn btn-primary" %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<br/>
+<%= render_async question_stats_path, container_id: 'refresh-me', replace_container: false %>
+
+<script>
+  var container = document.getElementById('refresh-me');
+  
+  var intervalId = window.setInterval(function(){
+    var event = new Event('refresh');
+    // Dispatch 'refresh' on the render_async container
+    container.dispatchEvent(event)
+  }, 3000);
+</script>
 
 
